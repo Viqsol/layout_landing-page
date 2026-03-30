@@ -1,3 +1,28 @@
+@import './variables';
+@import './mixins';
+@import './header';
+@import './aside';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+}
+
+.page {
+  min-width: 320px;
+  margin: 0;
+  font-family: Manrope, sans-serif;
+  color: $color-button-hover;
+  background-color: $color-text-main;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
 }

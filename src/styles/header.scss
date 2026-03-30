@@ -1,0 +1,153 @@
+.header {
+  min-height: 100vh;
+  background-image: url('../images/header-background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+
+    @include tablet {
+      padding-top: 36px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+    padding-bottom: 32px;
+
+    @include tablet {
+      padding-bottom: 64px;
+    }
+
+    @include desktop {
+      padding-bottom: 64px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+
+    // width: 152px;
+    transition: transform $duration ease;
+
+    &:hover {
+      transform: scale($scale);
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 152px;
+
+    @include tablet {
+      width: 228px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include tablet {
+      gap: 32px;
+    }
+  }
+
+  &__title {
+    max-width: 280px;
+    font-size: $motto-font-size;
+    line-height: 100%;
+    color: $color-text-main;
+
+    @include tablet {
+      max-width: 380px;
+      font-size: $motto-font-size-tablet;
+    }
+
+    @include desktop {
+      max-width: 360px;
+      font-size: $motto-font-size-desktop;
+      line-height: 100%;
+    }
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  min-height: $size-header-icons;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include tablet {
+    min-height: 32px;
+  }
+
+  &__number {
+    overflow: hidden;
+    max-width: 0;
+    margin-left: 0;
+    font-size: $font-size-small;
+    font-weight: 700;
+    line-height: 1;
+    color: $color-text-form;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all $duration ease;
+  }
+
+  &--phone {
+    width: auto;
+    min-width: $size-header-icons;
+    background-image: url('../images/Icon-Phone-call.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 24px;
+    padding-left: $size-header-icons;
+
+    @include tablet {
+      background-size: 32px;
+      padding-left: 32px;
+    }
+
+    // &:hover .icon__number,
+    // &:focus .icon__number {
+    //   max-width: 160px;
+    //   margin-left: 12px;
+    //   opacity: 1;
+    // }
+  }
+
+  &--menu {
+    width: auto;
+    min-width: $size-header-icons;
+    background-image: url('../images/Icon-Burger-menu.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 24px;
+    padding-left: $size-header-icons;
+
+    @include tablet {
+      background-size: 32px;
+      padding-left: 32px;
+    }
+
+    // &:hover .icon__number,
+    // &:focus .icon__number {
+    //   max-width: 160px;
+    //   margin-left: 12px;
+    //   opacity: 1;
+    // }
+  }
+}

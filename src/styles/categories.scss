@@ -1,7 +1,7 @@
 .categories {
   padding-top: 96px;
 
-  @include tablet {
+  @include on-tablet {
     padding-top: 120px;
   }
 
@@ -9,16 +9,16 @@
     max-width: 280px;
     margin-bottom: 48px;
     font-size: $font-size-h2;
-    line-height: 32px;
+    line-height: $spacing-8;
 
-    @include tablet {
+    @include on-tablet {
       max-width: 420px;
       margin-bottom: 56px;
       font-size: $font-size-h2-tablet;
-      line-height: 40px;
+      line-height: $spacing-10;
     }
 
-    @include desktop {
+    @include on-desktop {
       max-width: 400px;
       font-size: $font-size-h2-tablet;
       line-height: $motto-font-size-tablet;
@@ -27,10 +27,10 @@
 
   &__list {
     display: grid;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: $spacing-10;
+    margin-bottom: $spacing-10;
 
-    @include tablet {
+    @include on-tablet {
       gap: 56px;
       margin-bottom: 56px;
     }
@@ -40,23 +40,18 @@
 .category {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-
-  &__title {
-    font-size: $font-size-normal-18;
-    line-height: $height-text-l40;
-  }
+  gap: $spacing-4;
 
   &__pair {
     display: grid;
     grid-template-columns: repeat(2, 130px);
     justify-content: space-between;
-    gap: 20px;
+    gap: $spacing-5;
 
-    @include tablet {
+    @include on-tablet {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       justify-content: stretch;
-      gap: 24px;
+      gap: $spacing-6;
     }
   }
 
@@ -66,12 +61,12 @@
     width: 130px;
     height: 130px;
 
-    @include tablet {
+    @include on-tablet {
       width: auto;
       height: 184px;
     }
 
-    @include desktop {
+    @include on-desktop {
       height: 324px;
     }
   }
@@ -86,6 +81,11 @@
   &__link:hover .category__image {
     transform: scale($scale);
   }
+
+  &__title {
+    font-size: $font-size-normal-18;
+    line-height: $height-text-l40;
+  }
 }
 
 .button {
@@ -95,26 +95,23 @@
   width: 100%;
   padding-block: 14px;
   border: none;
-  border-radius: 8px;
+  border-radius: $spacing-2;
   font-size: $font-size-normal-16;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   line-height: 27px;
-  color: $color-text-main;
+  color: $color-button-text-main;
   text-decoration: none;
 
-  @include desktop {
+  @include on-desktop {
     width: 324px;
   }
 
   &--primary {
     background-color: $color-button-primary;
 
-    &:hover {
-      background-color: $color-button-hover;
-    }
-
+    &:hover,
     &:active {
-      background-color: $color-button-focus;
+      background-color: $color-button-hover;
     }
   }
 }

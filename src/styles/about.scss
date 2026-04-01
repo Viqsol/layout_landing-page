@@ -2,7 +2,7 @@
   margin-top: 96px;
   background-color: $color-background-second;
 
-  @include tablet {
+  @include on-tablet {
     margin-top: 120px;
   }
 
@@ -10,11 +10,11 @@
     overflow: hidden;
     height: 200px;
 
-    @include tablet {
+    @include on-tablet {
       height: 400px;
     }
 
-    @include desktop {
+    @include on-desktop {
       height: 460px;
     }
   }
@@ -23,31 +23,36 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform $duration ease;
 
-    @include tablet {
+    @include on-tablet {
       height: 400px;
     }
 
-    @include desktop {
+    @include on-desktop {
       height: 460px;
+    }
+
+    &:hover {
+      transform: scale($scale);
     }
   }
 
   &__container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: $spacing-6;
     padding-top: 48px;
     padding-bottom: 48px;
 
-    @include tablet {
+    @include on-tablet {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
+      gap: $spacing-6;
       padding-top: 120px;
       padding-bottom: 120px;
     }
 
-    @include desktop {
+    @include on-desktop {
       gap: 111px;
     }
   }
@@ -55,15 +60,15 @@
   &__title {
     max-width: 280px;
     font-size: $font-size-h2;
-    line-height: 32px;
+    line-height: $spacing-8;
 
-    @include tablet {
+    @include on-tablet {
       max-width: 370px;
       font-size: $font-size-h2-tablet;
       line-height: 100%;
     }
 
-    @include desktop {
+    @include on-desktop {
       max-width: 460px;
       font-size: $motto-font-size-tablet;
       line-height: $motto-font-size-tablet;
@@ -73,7 +78,7 @@
   &__description {
     max-width: 460px;
     font-size: $font-size-normal-16;
-    font-weight: 400;
+    font-weight: $font-weight-normal;
     line-height: $height-text-l40;
     letter-spacing: 0.15px;
   }

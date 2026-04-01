@@ -43,7 +43,6 @@
           <a
             href="tel:+12345555555"
             class="icon icon--phone"
-            aria-label="Call Bang and Olufsen"
           >
             <span class="icon__number">+1 234 555-55-55</span>
           </a>
@@ -51,8 +50,8 @@
           <a
             href="#menu"
             class="icon icon--menu"
-            aria-label="Open menu"
-          ></a>
+          >
+          </a>
         </div>
       </div>
 
@@ -69,26 +68,20 @@
     >
       <div class="menu__container container">
         <div class="menu__top">
-          <a
-            href="#header"
-            class="menu__logo"
-          >
+          <a href="#header" class="menu__logo">
             <img
-              src="src/images/header/logo.png"
+              class="menu__image"
+              src="./src/images/Logo.png"
               alt="Bang & Olufsen logo"
             />
           </a>
-          <a
-            href="#"
-            class="menu__close"
-            aria-label="Close menu"
-          ></a>
+          <a href="#" class="menu__close">
+          </a>
         </div>
 
         <div class="menu__bottom">
           <nav
             class="menu__nav"
-            aria-label="Main navigation"
           >
             <ul class="menu__list">
               <li class="menu__item">
@@ -117,7 +110,7 @@
               </li>
               <li class="menu__item">
                 <a
-                  href="#contact"
+                  href="#contact_us"
                   class="menu__link"
                 >
                   Contact Us
@@ -136,9 +129,9 @@
 
             <a
               href="tel:+12345555555"
-              class="menu__btn-call"
+              class="menu__call"
             >
-              Call to order
+              CALL TO ORDER
             </a>
           </div>
         </div>
@@ -303,7 +296,7 @@
       </section>
     </main>
 
-    <footer class="contact" id="contact">
+    <footer class="contact" id="contact_us">
       <div class="contact__container container">
         <div class="contact__main">
           <h2 class="contact__title">Contact us</h2>
@@ -326,13 +319,6 @@
                 placeholder="example@email.com"
                 required
             />
-            <!-- <input
-                class="form__input"
-                type="tel"
-                name="phone"
-                placeholder="+1 234 555-55-55"
-                required
-            /> -->
             <textarea
               class="form__input form__input--textarea"
               name="message"
@@ -348,14 +334,14 @@
         <div class="contact__info">
           <div class="contact__item">
             <div class="contact__label">Phone</div>
-            <a class="contact__value" href="tel:+12345555555">
+            <a class="contact__type" href="tel:+12345555555">
                 +1 234 555-55-55
             </a>
           </div>
 
           <div class="contact__item">
             <div class="contact__label">Email</div>
-            <a class="contact__value" href="mailto:hello@bang-olufsen.com">
+            <a class="contact__type" href="mailto:hello@bang-olufsen.com">
                 hello@bang-olufsen.com
             </a>
           </div>
@@ -368,7 +354,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-                400 first ave. suite 700 Minneapolis, MN 55401
+                400 first ave.<br> suite 700<br>Minneapolis, MN 55401
             </a>
           </address>
         </div>

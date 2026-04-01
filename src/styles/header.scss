@@ -13,13 +13,13 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding-top: 24px;
+    padding-top: $padding-page;
 
-    @include tablet {
-      padding-top: 36px;
+    @include on-tablet {
+      padding-top: $spacing-9;
     }
 
-    @include desktop {
+    @include on-desktop {
       max-width: none;
       margin-inline: 0;
     }
@@ -30,13 +30,13 @@
     align-items: flex-end;
     flex: 1;
     width: 100%;
-    padding-bottom: 32px;
+    padding-bottom: $spacing-8;
 
-    @include tablet {
+    @include on-tablet {
       padding-bottom: 64px;
     }
 
-    @include desktop {
+    @include on-desktop {
       max-width: none;
       margin-inline: 0;
     }
@@ -44,8 +44,6 @@
 
   &__logo {
     display: flex;
-
-    // width: 152px;
     transition: transform $duration ease;
 
     &:hover {
@@ -57,7 +55,7 @@
     display: block;
     width: 152px;
 
-    @include tablet {
+    @include on-tablet {
       width: 228px;
     }
   }
@@ -65,10 +63,10 @@
   &__icons {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: $spacing-6;
 
-    @include tablet {
-      gap: 32px;
+    @include on-tablet {
+      gap: $spacing-8;
     }
   }
 
@@ -76,14 +74,14 @@
     max-width: 280px;
     font-size: $motto-font-size;
     line-height: 100%;
-    color: $color-text-main;
+    color: $color-button-text-main;
 
-    @include tablet {
+    @include on-tablet {
       max-width: 380px;
       font-size: $motto-font-size-tablet;
     }
 
-    @include desktop {
+    @include on-desktop {
       max-width: 360px;
       font-size: $motto-font-size-desktop;
       line-height: 100%;
@@ -98,8 +96,8 @@
   text-decoration: none;
   cursor: pointer;
 
-  @include tablet {
-    min-height: 32px;
+  @include on-tablet {
+    min-height: $spacing-8;
   }
 
   &__number {
@@ -107,12 +105,16 @@
     max-width: 0;
     margin-left: 0;
     font-size: $font-size-small;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     line-height: 1;
     color: $color-text-form;
     white-space: nowrap;
     opacity: 0;
     transition: all $duration ease;
+
+    @include on-tablet {
+      font-size: $font-size-small-hover;
+    }
   }
 
   &--phone {
@@ -120,21 +122,27 @@
     min-width: $size-header-icons;
     background-image: url('../images/Icon-Phone-call.png');
     background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 24px;
-    padding-left: $size-header-icons;
+    background-position: right center;
+    background-size: $spacing-6;
+    padding-right: $size-header-icons;
 
-    @include tablet {
-      background-size: 32px;
-      padding-left: 32px;
+    @include on-tablet {
+      background-size: $spacing-8;
+      padding-right: $spacing-8;
     }
 
-    // &:hover .icon__number,
-    // &:focus .icon__number {
-    //   max-width: 160px;
-    //   margin-left: 12px;
-    //   opacity: 1;
-    // }
+    &:hover {
+      cursor:
+        url('../images/Cursor-Mouse-Mice.png') 10 10,
+        pointer;
+    }
+
+    &:hover .icon__number,
+    &:focus .icon__number {
+      max-width: 160px;
+      margin-right: $spacing-2;
+      opacity: 1;
+    }
   }
 
   &--menu {
@@ -143,17 +151,20 @@
     background-image: url('../images/Icon-Burger-menu.png');
     background-repeat: no-repeat;
     background-position: right center;
-    background-size: 24px;
+    background-size: $spacing-6;
 
     // padding-left: $size-header-icons;
 
-    @include tablet {
-      width: 32px;
-      height: 32px;
+    @include on-tablet {
+      width: $spacing-8;
+      height: $spacing-8;
     }
 
     &:hover {
       background-image: url('../images/Icon-Burger-menu-hover.png');
+      cursor:
+        url('../images/Cursor-Mouse-Mice.png') 10 10,
+        pointer;
     }
   }
 }

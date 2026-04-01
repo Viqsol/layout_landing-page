@@ -1,7 +1,7 @@
 .contact {
   margin-top: 64px;
 
-  @include tablet {
+  @include on-tablet {
     margin-top: 120px;
   }
 
@@ -10,14 +10,14 @@
     gap: 48px;
     padding-bottom: 64px;
 
-    @include tablet {
+    @include on-tablet {
       grid-template-columns: minmax(0, 600px);
       gap: 111px;
       align-items: start;
       padding-bottom: 120px;
     }
 
-    @include desktop {
+    @include on-desktop {
       grid-template-columns: minmax(0, 600px) minmax(0, 1fr);
       gap: 111px;
       align-items: start;
@@ -27,14 +27,14 @@
 
   &__title {
     font-size: $font-size-h2;
-    line-height: 32px;
+    line-height: $spacing-8;
 
-    @include tablet {
+    @include on-tablet {
       font-size: $font-size-h2-tablet;
       line-height: 100%;
     }
 
-    @include desktop {
+    @include on-desktop {
       font-size: $motto-font-size-tablet;
       line-height: 48px;
     }
@@ -42,32 +42,36 @@
 
   &__form {
     display: grid;
-    gap: 16px;
+    gap: $spacing-4;
     margin-top: 48px;
   }
 
   &__info {
     display: grid;
-    gap: 24px;
+    gap: $spacing-6;
     margin-top: 48px;
 
-    @include desktop {
+    @include on-desktop {
       margin-top: 88px;
     }
   }
 
   &__label {
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: 400;
+    margin-bottom: $spacing-2;
+    font-size: $font-size-small-hover;
+    font-weight: $font-weight-normal;
     line-height: $height-text-l40;
     color: $color-text-secondary;
   }
 
-  &__value,
+  &__address-link {
+    font-style: normal;
+  }
+
+  &__type,
   &__address-link {
     font-size: $font-size-normal-16;
-    font-weight: 400;
+    font-weight: $font-weight-normal;
     line-height: $height-text-l40;
     letter-spacing: 0.15px;
     color: $color-text-address;
@@ -77,17 +81,13 @@
       color: $color-button-primary;
     }
   }
-
-  &__address {
-    font-style: normal;
-  }
 }
 
 .form__input {
   width: 100%;
-  padding: 14px 16px;
+  padding: 14px $spacing-4;
   border: 1px solid #f9f9f9;
-  border-radius: 8px;
+  border-radius: $border-radius-button;
   background-color: #f9f9f9;
   outline: none;
 
@@ -96,7 +96,7 @@
   }
 
   &:focus {
-    border-color: $color-button-primary;
+    border: 2px solid $color-button-primary;
   }
 
   &--textarea {
@@ -109,11 +109,11 @@
   width: 100%;
   padding-block: 14px;
   border: none;
-  border-radius: 8px;
+  border-radius: $border-radius-button;
   font-size: $font-size-normal-16;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   line-height: 27px;
-  color: $color-text-main;
+  color: $color-button-text-main;
   background-color: $color-button-primary;
   cursor: pointer;
 

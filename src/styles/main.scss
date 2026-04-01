@@ -12,35 +12,35 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 700;
-  color: $color-button-hover;
+  font-weight: $font-weight-bold;
+  color: $color-text-main;
 }
 
 .page {
-  min-width: 320px;
   margin: 0;
+  min-width: $width-min;
   font-family: Manrope, sans-serif;
-  color: $color-button-hover;
-  background-color: $color-text-main;
+  color: $color-text-main;
+  background-color: $color-button-text-main;
 
   &:has(.page__menu:target) {
     overflow: hidden;
   }
 }
 
-// .page__content {
-//   overflow: hidden;
-// }
+.page__content {
+  overflow: hidden;
+}
 
 .container {
   padding-inline: $padding-page;
 
-  @include tablet {
+  @include on-tablet {
     padding-inline: $padding-page-tablet;
   }
 
-  @include desktop {
-    max-width: 1260px;
+  @include on-desktop {
+    max-width: $width-desktop-max;
     margin-inline: auto;
     padding-inline: $padding-page-desktop;
   }
